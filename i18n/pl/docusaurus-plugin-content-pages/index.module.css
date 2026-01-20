@@ -1,0 +1,175 @@
+.heroBanner {
+  padding: 6rem 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.heroContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media screen and (max-width: 996px) {
+  .heroContent {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .heroBanner {
+    padding: 3rem 0;
+  }
+}
+
+.heroText h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: white;
+  min-height: 4.5rem;
+}
+
+.heroText p {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.heroImage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.floatingCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floatingCard h3 {
+  margin: 0 0 0.5rem 0;
+  color: #333;
+  font-size: 1.5rem;
+}
+
+.floatingCard p {
+  margin: 0;
+  color: #666;
+}
+
+.features {
+  padding: 4rem 0;
+  background: var(--ifm-background-color);
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  color: var(--ifm-heading-color);
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featureCard {
+  padding: 2rem;
+  background: var(--ifm-card-background-color);
+  border-radius: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featureCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.featureCard h3 {
+  margin-bottom: 1rem;
+  color: var(--ifm-heading-color);
+}
+
+.featureCard p {
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+}
+
+.statsSection {
+  padding: 4rem 0;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.statCard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.statValue {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #667eea;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.ctaSection {
+  padding: 5rem 0;
+  text-align: center;
+  background: var(--ifm-color-primary);
+  color: white;
+}
+
+.ctaSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.ctaSection p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}

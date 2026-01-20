@@ -1,0 +1,30 @@
+{
+  "theme.ErrorPageContent.title": {
+    "message": "Ta strona uległa awarii.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.NotFound.title": {
+    "message": "Nie znaleziono strony",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "Nie mogliśmy znaleźć tego, czego szukasz.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Skontaktuj się z właścicielem strony, która doprowadziła Cię do oryginalnego adresu URL i daj im znać, że ich link jest uszkodzony.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Strona główna",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Okruchy",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.navbar.mobileMenuButtonLabel": {
+    "message": "Menu",
+    "description": "Mobile menu button label"
+  }
+}

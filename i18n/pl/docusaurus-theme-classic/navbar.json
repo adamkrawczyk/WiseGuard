@@ -1,0 +1,22 @@
+{
+  "title": {
+    "message": "WiseGuard",
+    "description": "The title in the navbar"
+  },
+  "item.label.Home": {
+    "message": "Strona główna",
+    "description": "Navbar item with label Home"
+  },
+  "item.label.Solution": {
+    "message": "Rozwiązanie",
+    "description": "Navbar item with label Solution"
+  },
+  "item.label.Cost Calculator": {
+    "message": "Kalkulator kosztów",
+    "description": "Navbar item with label Cost Calculator"
+  },
+  "item.label.Contact": {
+    "message": "Kontakt",
+    "description": "Navbar item with label Contact"
+  }
+}

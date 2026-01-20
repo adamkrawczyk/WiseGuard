@@ -1,0 +1,42 @@
+{
+  "link.title.Product": {
+    "message": "Product",
+    "description": "Footer links column Product"
+  },
+  "link.title.Company": {
+    "message": "Company",
+    "description": "Footer links column Company"
+  },
+  "link.title.Legal": {
+    "message": "Legal",
+    "description": "Footer links column Legal"
+  },
+  "link.item.label.Solution": {
+    "message": "Solution",
+    "description": "Footer link Solution"
+  },
+  "link.item.label.Cost Calculator": {
+    "message": "Cost Calculator",
+    "description": "Footer link Cost Calculator"
+  },
+  "link.item.label.About Us": {
+    "message": "About Us",
+    "description": "Footer link About Us"
+  },
+  "link.item.label.Contact": {
+    "message": "Contact",
+    "description": "Footer link Contact"
+  },
+  "link.item.label.Privacy Policy": {
+    "message": "Privacy Policy",
+    "description": "Footer link Privacy Policy"
+  },
+  "link.item.label.Terms of Service": {
+    "message": "Terms of Service",
+    "description": "Footer link Terms of Service"
+  },
+  "copyright": {
+    "message": "Copyright © 2026 WiseGuard. All rights reserved.",
+    "description": "Footer copyright"
+  }
+}

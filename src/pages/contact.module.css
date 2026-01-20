@@ -1,0 +1,124 @@
+.contactPage {
+  padding: 4rem 0;
+  min-height: 80vh;
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 1.25rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 3rem;
+}
+
+.contactContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 996px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contactInfo,
+.contactForm {
+  background: var(--ifm-card-background-color);
+  padding: 2rem;
+  border-radius: 1rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.contactInfo h2,
+.contactForm h2 {
+  margin-bottom: 1.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.contactInfo p {
+  margin-bottom: 2rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.6;
+}
+
+.infoCard {
+  background: var(--ifm-background-color);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.infoCard h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+  color: var(--ifm-heading-color);
+}
+
+.infoCard p {
+  margin: 0;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ifm-heading-color);
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 2px solid var(--ifm-color-emphasis-300);
+  border-radius: 0.5rem;
+  background: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitButton {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  background: var(--ifm-color-primary);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.submitButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
