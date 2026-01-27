@@ -12,6 +12,7 @@ export default function Offer(): JSX.Element {
     () => `${slidesHref}#page=${currentSlide}&view=fitH&toolbar=0&navpanes=0&scrollbar=0`,
     [currentSlide],
   );
+  const slideLink = useMemo(() => `${slidesHref}#page=${currentSlide}`, [currentSlide]);
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
     if (event.key === 'ArrowLeft') {
@@ -88,6 +89,18 @@ export default function Offer(): JSX.Element {
                 className={styles.carouselIframe}
                 scrolling="no"
               />
+              <div className={styles.carouselFallback}>
+                <strong>Podgląd slajdów na telefonie</strong>
+                <p>
+                  Twój telefon może blokować podgląd PDF w tej ramce. Otwórz slajd w nowej karcie.
+                </p>
+                <a className="button button--primary" href={slideLink} target="_blank" rel="noreferrer">
+                  Otwórz slajd {currentSlide}
+                </a>
+                <a className={styles.downloadLink} href={slidesHref} target="_blank" rel="noreferrer">
+                  Pobierz cały deck (PDF)
+                </a>
+              </div>
             </div>
             <div className={styles.carouselFooter}>
               <input

@@ -116,6 +116,15 @@
   pointer-events: none;
 }
 
+.carouselFallback {
+  display: none;
+}
+
+.carouselFallback p {
+  color: var(--wg-text-muted);
+  margin: 0;
+}
+
 .carouselFooter {
   margin-top: 1.5rem;
   display: flex;
@@ -171,6 +180,29 @@
 
   .carouselFrame {
     height: min(65vh, 640px);
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselFrame {
+    height: auto;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carouselIframe {
+    display: none;
+  }
+
+  .carouselFallback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 2rem 1.5rem;
+    text-align: center;
   }
 }
 
