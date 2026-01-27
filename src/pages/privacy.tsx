@@ -3,43 +3,39 @@ import Layout from '@theme/Layout';
 
 export default function Privacy(): JSX.Element {
   return (
-    <Layout title="Privacy Policy" description="WiseGuard Privacy Policy">
-      <div style={{ padding: '4rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-        <h1>Privacy Policy</h1>
-        <p><em>Last updated: January 2026</em></p>
-        
-        <h2>1. Information We Collect</h2>
+    <Layout title="Polityka prywatności" description="Polityka prywatności WiseGuard">
+      <div style={{padding: '4rem 2rem', maxWidth: '800px', margin: '0 auto'}}>
+        <h1>Polityka prywatności</h1>
+        <p><em>Ostatnia aktualizacja: styczeń 2026</em></p>
+
+        <h2>1. Jakie informacje zbieramy</h2>
         <p>
-          We collect information you provide directly to us, including name, email, company name, 
-          and phone number when you contact us or request a demo.
+          Zbieramy informacje podane bezpośrednio przez Ciebie, w tym imię, email, nazwę firmy i
+          numer telefonu, gdy kontaktujesz się z nami lub prosisz o demo.
         </p>
 
-        <h2>2. How We Use Your Information</h2>
-        <p>
-          We use the information we collect to:
-        </p>
+        <h2>2. Jak wykorzystujemy dane</h2>
+        <p>Wykorzystujemy dane, aby:</p>
         <ul>
-          <li>Respond to your inquiries and requests</li>
-          <li>Send you technical notices and support messages</li>
-          <li>Communicate with you about products, services, and events</li>
+          <li>odpowiadać na zapytania i prośby</li>
+          <li>wysyłać powiadomienia techniczne i wsparcie</li>
+          <li>informować o produktach, usługach i wydarzeniach</li>
         </ul>
 
-        <h2>3. Data Security</h2>
+        <h2>3. Bezpieczeństwo danych</h2>
         <p>
-          We implement appropriate technical and organizational measures to protect your personal 
-          information against unauthorized access, alteration, disclosure, or destruction.
+          Stosujemy odpowiednie środki techniczne i organizacyjne w celu ochrony danych przed
+          nieautoryzowanym dostępem, zmianą, ujawnieniem lub zniszczeniem.
         </p>
 
-        <h2>4. GDPR Compliance</h2>
+        <h2>4. Zgodność z RODO</h2>
         <p>
-          As a company operating in the European Union, we comply with the General Data Protection 
-          Regulation (GDPR). You have the right to access, correct, or delete your personal data.
+          Jako firma działająca w UE spełniamy wymagania RODO. Masz prawo do dostępu, poprawy lub
+          usunięcia danych osobowych.
         </p>
 
-        <h2>5. Contact Us</h2>
-        <p>
-          If you have questions about this Privacy Policy, please contact us at: info@wiseguard.pl
-        </p>
+        <h2>5. Kontakt</h2>
+        <p>W sprawach dotyczących polityki prywatności napisz do: info@wiseguard.pl</p>
       </div>
     </Layout>
   );

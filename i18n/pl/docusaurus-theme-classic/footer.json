@@ -15,6 +15,10 @@
     "message": "Rozwiązanie",
     "description": "Footer link Solution"
   },
+  "link.item.label.Offer": {
+    "message": "Oferta",
+    "description": "Footer link Offer"
+  },
   "link.item.label.Cost Calculator": {
     "message": "Kalkulator kosztów",
     "description": "Footer link Cost Calculator"

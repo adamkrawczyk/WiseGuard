@@ -6,8 +6,8 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'WiseGuard',
-  tagline: 'Zabezpiecz swoje aktywa budowlane dzięki inteligentnemu śledzeniu IoT',
-  favicon: 'img/favicon.ico',
+  tagline: 'Inteligentny audyt zasobów i antykradzież na budowach',
+  favicon: 'img/favicon.svg',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -24,21 +24,13 @@ const config: Config = {
 
   i18n: {
     defaultLocale: 'pl',
-    locales: ['pl', 'en'],
+    locales: ['pl'],
     localeConfigs: {
-      en: {
-        label: 'English',
-        direction: 'ltr',
-        htmlLang: 'en-US',
-        calendar: 'gregory',
-        path: 'en',
-      },
       pl: {
         label: 'Polski',
         direction: 'ltr',
         htmlLang: 'pl-PL',
         calendar: 'gregory',
-        path: 'pl',
       },
     },
   },
@@ -57,7 +49,7 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/wiseguard-social-card.jpg',
+    image: 'img/wiseguard-social-card.svg',
     colorMode: {
       defaultMode: 'light',
       disableSwitch: false,
@@ -72,27 +64,28 @@ const config: Config = {
       items: [
         {
           to: '/',
-          label: 'Home',
+          label: 'Strona główna',
           position: 'left',
         },
         {
           to: '/solution',
-          label: 'Solution',
+          label: 'Rozwiązanie',
+          position: 'left',
+        },
+        {
+          to: '/offer',
+          label: 'Oferta',
           position: 'left',
         },
         {
           to: '/calculator',
-          label: 'Cost Calculator',
+          label: 'Kalkulator kosztów',
           position: 'left',
         },
         {
           to: '/contact',
-          label: 'Contact',
+          label: 'Kontakt',
           position: 'left',
-        },
-        {
-          type: 'localeDropdown',
-          position: 'right',
         },
       ],
     },
@@ -100,40 +93,44 @@ const config: Config = {
       style: 'dark',
       links: [
         {
-          title: 'Product',
+          title: 'Produkt',
           items: [
             {
-              label: 'Solution',
+              label: 'Rozwiązanie',
               to: '/solution',
             },
             {
-              label: 'Cost Calculator',
+              label: 'Oferta',
+              to: '/offer',
+            },
+            {
+              label: 'Kalkulator kosztów',
               to: '/calculator',
             },
           ],
         },
         {
-          title: 'Company',
+          title: 'Firma',
           items: [
             {
-              label: 'About Us',
+              label: 'O nas',
               to: '/about',
             },
             {
-              label: 'Contact',
+              label: 'Kontakt',
               to: '/contact',
             },
           ],
         },
         {
-          title: 'Legal',
+          title: 'Prawne',
           items: [
             {
-              label: 'Privacy Policy',
+              label: 'Polityka prywatności',
               to: '/privacy',
             },
             {
-              label: 'Terms of Service',
+              label: 'Warunki użytkowania',
               to: '/terms',
             },
           ],

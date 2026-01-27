@@ -1,150 +1,171 @@
 import React from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import styles from './solution.module.css';
 
 export default function Solution(): JSX.Element {
   return (
     <Layout
-      title="Nasze Rozwiązanie"
-      description="Dowiedz się, jak system śledzenia aktywów IoT WiseGuard chroni Twoją budowę">
+      title="Rozwiązanie"
+      description="Poznaj system WiseGuard: BLE, strefy i GPS recovery dla placów budowy."
+    >
       <div className={styles.solutionPage}>
         <div className="container">
-          <h1 className={styles.title}>Rozwiązanie WiseGuard</h1>
-          <p className={styles.subtitle}>
-            Kompleksowy system śledzenia aktywów IoT i zapobiegania kradzieżom zaprojektowany specjalnie dla placów budowy
-          </p>
+          <header className={styles.hero}>
+            <span className={styles.eyebrow}>SYSTEM WISEGUARD</span>
+            <h1>Hybrydowa inteligencja aktywów dla budów</h1>
+            <p>
+              WiseGuard dostarcza dzienny audyt, widoczność stref i szybki odzysk kluczowych
+              aktywów. Zbudowane pod realia polskich budów.
+            </p>
+            <div className={styles.heroActions}>
+              <Link className="button button--primary" to="/contact">
+                Umów demo
+              </Link>
+              <Link className="button button--secondary" to="/offer">
+                Zobacz ofertę
+              </Link>
+            </div>
+          </header>
 
           <section className={styles.section}>
-            <h2>Problem</h2>
+            <h2>Problem na budowach</h2>
             <div className={styles.problemGrid}>
               <div className={styles.problemCard}>
                 <div className={styles.problemIcon}>🚨</div>
-                <h3>Masowe Kradzieże</h3>
-                <p>74% polskich firm budowlanych doświadczyło kradzieży w zeszłym roku, ze stratami przekraczającymi 1,5 mld € rocznie w całej Europie</p>
+                <h3>Powtarzalne kradzieże</h3>
+                <p>
+                  74% firm budowlanych w Polsce doświadczyło kradzieży, a straty w UE przekraczają
+                  €1.5 mld rocznie.
+                </p>
               </div>
               <div className={styles.problemCard}>
                 <div className={styles.problemIcon}>⏱️</div>
-                <h3>Opóźnienia Projektów</h3>
-                <p>Incydenty kradzieży powodują średnio 3-4 tygodnie opóźnień, prowadząc do niespełnienia terminów i kar finansowych</p>
+                <h3>Opóźnienia projektów</h3>
+                <p>
+                  Utrata sprzętu oznacza średnio 3–4 tygodnie opóźnień i kary umowne.
+                </p>
               </div>
               <div className={styles.problemCard}>
-                <div className={styles.problemIcon}>💸</div>
-                <h3>Niski Wskaźnik Odzysku</h3>
-                <p>Tylko 20-25% skradzionego sprzętu budowlanego jest odzyskiwane bez systemów śledzenia</p>
+                <div className={styles.problemIcon}>📉</div>
+                <h3>Niski odzysk</h3>
+                <p>Tylko 20–25% sprzętu wraca bez systemów śledzenia.</p>
               </div>
               <div className={styles.problemCard}>
-                <div className={styles.problemIcon}>👤</div>
-                <h3>Zagrożenia Wewnętrzne</h3>
-                <p>41% incydentów kradzieży dotyczy pracowników lub podwykonawców z dostępem do budowy</p>
+                <div className={styles.problemIcon}>🧠</div>
+                <h3>Ryzyko insiderów</h3>
+                <p>41% incydentów wiąże się z osobami mającymi dostęp do budowy.</p>
               </div>
             </div>
           </section>
 
           <section className={styles.section}>
-            <h2>Nasza Hybrydowa Architektura Śledzenia</h2>
+            <h2>Hybrydowa architektura</h2>
             <div className={styles.architectureGrid}>
               <div className={styles.tierCard}>
-                <h3>🏷️ Poziom Masowy: Tagi BLE</h3>
-                <p className={styles.tierDesc}>Dla narzędzi, sprzętu i materiałów</p>
+                <h3>🏷️ Warstwa masowa — tagi BLE</h3>
+                <p className={styles.tierDesc}>Każde narzędzie, materiał i drobny sprzęt.</p>
                 <ul>
-                  <li><strong>Koszt:</strong> ~40 PLN za tag</li>
-                  <li><strong>Bateria:</strong> 1-2 lata</li>
-                  <li><strong>Zasięg:</strong> Śledzenie strefowe poprzez bramy</li>
-                  <li><strong>Użycie:</strong> Młoty, wiertarki, deski, rury, itp.</li>
+                  <li><strong>Koszt:</strong> ~60 PLN za tag</li>
+                  <li><strong>Bateria:</strong> 1–2 lata</li>
+                  <li><strong>Pokrycie:</strong> strefy / last-seen</li>
+                  <li><strong>Zastosowanie:</strong> wiertarki, piły, palety</li>
                 </ul>
               </div>
 
               <div className={styles.tierCard}>
-                <h3>📡 Poziom Premium: Trackery GPS</h3>
-                <p className={styles.tierDesc}>Dla aktywów wysokiej wartości</p>
+                <h3>📡 Warstwa premium — GPS</h3>
+                <p className={styles.tierDesc}>Najcenniejsze maszyny i mobilne aktywa.</p>
                 <ul>
-                  <li><strong>Koszt:</strong> ~400 PLN za tracker</li>
-                  <li><strong>Bateria:</strong> Do 5 lat (zoptymalizowany)</li>
-                  <li><strong>Zasięg:</strong> Globalne śledzenie GPS + LTE-M</li>
-                  <li><strong>Użycie:</strong> Generatory, minikoparki, ciężkie maszyny</li>
+                  <li><strong>Koszt:</strong> ~500 PLN za tracker</li>
+                  <li><strong>Bateria:</strong> do 5 lat</li>
+                  <li><strong>Pokrycie:</strong> GPS + LTE-M / NB-IoT</li>
+                  <li><strong>Zastosowanie:</strong> agregaty, koparki, przyczepy</li>
                 </ul>
               </div>
 
               <div className={styles.tierCard}>
-                <h3>🚪 Infrastruktura: Bramy BLE</h3>
-                <p className={styles.tierDesc}>Strategiczne punkty monitorowania</p>
+                <h3>🚪 Infrastruktura — bramki BLE</h3>
+                <p className={styles.tierDesc}>Strategiczne punkty i budowa stref.</p>
                 <ul>
-                  <li><strong>Koszt:</strong> ~400 PLN za bramę</li>
-                  <li><strong>Rozmieszczenie:</strong> Wejścia, wyjścia, strefy składowania</li>
-                  <li><strong>Zasięg:</strong> Do 50m pokrycia wewnętrznego</li>
-                  <li><strong>Zasilanie:</strong> PoE lub zasilacz sieciowy</li>
+                  <li><strong>Koszt:</strong> ~600 PLN za bramkę</li>
+                  <li><strong>Lokalizacja:</strong> wejścia, wyjścia, magazyny</li>
+                  <li><strong>Zasięg:</strong> 50 m wewnątrz</li>
+                  <li><strong>Zasilanie:</strong> PoE lub sieć</li>
                 </ul>
               </div>
             </div>
           </section>
 
           <section className={styles.section}>
-            <h2>Kluczowe Funkcje</h2>
+            <h2>Kluczowe wyróżniki</h2>
             <div className={styles.featuresGrid}>
               <div className={styles.featureItem}>
-                <h3>📱 Codzienne Automatyczne Audyty</h3>
-                <p>System automatycznie skanuje wszystkie aktywa z tagami codziennie i alarmuje o brakujących przedmiotach</p>
+                <h3>Codzienny audyt automatyczny</h3>
+                <p>Każdy tagowany zasób sprawdzany codziennie, braki zgłaszane tego samego dnia.</p>
               </div>
-
               <div className={styles.featureItem}>
-                <h3>🚨 Alerty w Czasie Rzeczywistym</h3>
-                <p>Natychmiastowe powiadomienia SMS/Email, gdy aktywa opuszczają wyznaczone strefy lub są przemieszczane bez autoryzacji</p>
+                <h3>Alerty strefowe w czasie rzeczywistym</h3>
+                <p>SMS/email w momencie opuszczenia strefy.</p>
               </div>
-
               <div className={styles.featureItem}>
-                <h3>📍 Śledzenie Strefowe</h3>
-                <p>Śledź, które aktywa znajdują się w której strefie (główna budowa, magazyn, parking, itp.)</p>
+                <h3>Widoczność strefowa</h3>
+                <p>Wiesz, które narzędzia są w których strefach bez ręcznych skanów.</p>
               </div>
-
               <div className={styles.featureItem}>
-                <h3>📊 Kompleksowe Raporty</h3>
-                <p>Szczegółowe logi incydentów z datami, godzinami i lokalizacjami - gotowe dla policji i firm ubezpieczeniowych</p>
+                <h3>Pakiety incydentów</h3>
+                <p>Logi i ślady GPS gotowe do ubezpieczyciela lub policji.</p>
               </div>
-
               <div className={styles.featureItem}>
-                <h3>👥 Zarządzanie Dostępem</h3>
-                <p>Śledź, kto przemieszcza jakie aktywa i kiedy - kompletny łańcuch odpowiedzialności</p>
+                <h3>Odpowiedzialność za dostęp</h3>
+                <p>Śledź ruchy aktywów w czasie zmian i podwykonawców.</p>
               </div>
-
               <div className={styles.featureItem}>
-                <h3>🔋 Monitorowanie Baterii</h3>
-                <p>Automatyczne powiadomienia, gdy baterie muszą być wymienione, zapewniając nieprzerwane pokrycie</p>
+                <h3>Monitoring baterii</h3>
+                <p>Alerty wymiany tagów i trackerów, bez martwych stref.</p>
               </div>
             </div>
           </section>
 
           <section className={styles.section}>
-            <h2>Jak To Działa</h2>
+            <h2>Jak działa WiseGuard</h2>
             <div className={styles.workflowSection}>
               <div className={styles.workflowStep}>
                 <div className={styles.stepNumber}>1</div>
-                <h3>Początkowa Konfiguracja</h3>
-                <p>Przypisujemy tagi BLE do narzędzi i małego sprzętu, trackery GPS do maszyn wysokiej wartości. Instalujemy bramy BLE przy wejściach/wyjściach.</p>
+                <h3>Tagowanie i instalacja</h3>
+                <p>Tagi BLE, trackery GPS i bramki przy wejściach.</p>
               </div>
 
               <div className={styles.workflowStep}>
                 <div className={styles.stepNumber}>2</div>
-                <h3>Codzienne Skanowanie</h3>
-                <p>System automatycznie skanuje wszystkie aktywa z tagami każdego ranka. Brakujące przedmioty są natychmiast zgłaszane kierownikowi budowy.</p>
+                <h3>Dzienny audyt</h3>
+                <p>WiseGuard sprawdza wszystkie aktywa i zgłasza braki natychmiast.</p>
               </div>
 
               <div className={styles.workflowStep}>
                 <div className={styles.stepNumber}>3</div>
-                <h3>Monitorowanie Ruchu</h3>
-                <p>Bramy wykrywają, gdy aktywa z tagami je mijają. Trackery GPS raportują lokalizację, gdy opuszczają strefę budowy.</p>
+                <h3>Monitoring ruchu</h3>
+                <p>Bramki wykrywają przejścia, GPS raportuje po opuszczeniu strefy.</p>
               </div>
 
               <div className={styles.workflowStep}>
                 <div className={styles.stepNumber}>4</div>
-                <h3>Natychmiastowe Alerty</h3>
-                <p>Jeśli coś opuści budowę o nieautoryzowanych godzinach lub aktyw zniknie, otrzymujesz natychmiastowe powiadomienie SMS/Email.</p>
+                <h3>Reakcja incydentowa</h3>
+                <p>Alerty uruchamiają tryb odzysku i generację raportu.</p>
               </div>
+            </div>
+          </section>
 
-              <div className={styles.workflowStep}>
-                <div className={styles.stepNumber}>5</div>
-                <h3>Działania i Odzyskiwanie</h3>
-                <p>Korzystaj z danych GPS, aby zlokalizować skradzione aktywa. Szczegółowe logi pomagają w zgłoszeniach policyjnych i roszczeniach ubezpieczeniowych.</p>
-              </div>
+          <section className={styles.ctaSection}>
+            <h2>Zobacz w praktyce</h2>
+            <p>Pobierz materiały i umów demo, aby zaplanować wdrożenie.</p>
+            <div className={styles.ctaButtons}>
+              <Link className="button button--primary" to="/contact">
+                Umów demo
+              </Link>
+              <Link className="button button--secondary" to="/offer">
+                Otwórz ofertę
+              </Link>
             </div>
           </section>
         </div>

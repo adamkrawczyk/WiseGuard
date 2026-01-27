@@ -1,253 +1,186 @@
 .calculatorPage {
-  padding: 4rem 0;
-  min-height: 80vh;
+  padding: 4rem 0 6rem;
 }
 
-.title {
+.header {
   text-align: center;
-  font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: 1rem;
-}
-
-.subtitle {
-  text-align: center;
-  font-size: 1.25rem;
-  color: var(--ifm-color-emphasis-700);
   margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(44, 230, 255, 0.85);
+}
+
+.header p {
+  color: var(--wg-text-muted);
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .calculatorContainer {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  grid-template-columns: minmax(280px, 1fr) minmax(0, 1.4fr);
+  gap: 2rem;
 }
 
-@media screen and (max-width: 996px) {
-  .calculatorContainer {
-    grid-template-columns: 1fr;
-  }
-}
-
-.inputSection,
-.resultsSection {
-  background: var(--ifm-card-background-color);
+.inputSection {
   padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-glass-strong);
+  border: 1px solid var(--wg-border);
+  box-shadow: var(--wg-shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
-.inputSection h2,
-.resultsSection h2 {
-  margin-bottom: 2rem;
-  color: var(--ifm-heading-color);
-}
-
-.inputGroup {
-  margin-bottom: 2rem;
+.inputSection h2 {
+  margin-bottom: 0.5rem;
 }
 
 .inputGroup label {
-  display: block;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  color: var(--ifm-heading-color);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
 }
 
 .helpText {
-  display: block;
-  font-size: 0.875rem;
-  font-weight: 400;
-  color: var(--ifm-color-emphasis-600);
-  margin-top: 0.25rem;
+  font-size: 0.85rem;
+  color: var(--wg-text-muted);
 }
 
 .input,
 .select {
   width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 2px solid var(--ifm-color-emphasis-300);
-  border-radius: 0.5rem;
-  background: var(--ifm-background-color);
-  color: var(--ifm-font-color-base);
-  transition: border-color 0.3s;
-}
-
-.input:focus,
-.select:focus {
-  outline: none;
-  border-color: var(--ifm-color-primary);
 }
 
 .slider {
-  width: 100%;
-  margin-top: 0.5rem;
+  margin-top: 0.8rem;
 }
 
 .calculateButton {
-  width: 100%;
-  padding: 1rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  background: var(--ifm-color-primary);
-  color: white;
+  background: var(--gradient-primary);
   border: none;
-  border-radius: 0.5rem;
+  color: #03101c;
+  padding: 0.9rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.calculateButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+.resultsSection {
+  display: grid;
+  gap: 1.5rem;
 }
 
 .resultCard {
-  background: var(--ifm-background-color);
-  padding: 1.5rem;
-  border-radius: 0.75rem;
-  margin-bottom: 1.5rem;
-  border: 1px solid var(--ifm-color-emphasis-200);
-}
-
-.resultCard h3 {
-  margin-bottom: 1rem;
-  color: var(--ifm-heading-color);
+  padding: 1.8rem;
+  border-radius: 18px;
+  background: rgba(10, 18, 32, 0.9);
+  border: 1px solid rgba(120, 180, 255, 0.25);
+  color: var(--wg-text);
+  box-shadow: var(--wg-shadow-md);
 }
 
 .costBreakdown {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
 
 .costItem {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0;
-  color: var(--ifm-color-emphasis-700);
+  margin-top: 0.7rem;
+  color: var(--wg-text-muted);
 }
 
 .costTotal {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 0;
-  margin-top: 0.5rem;
-  border-top: 2px solid var(--ifm-color-emphasis-300);
-  font-weight: 700;
-  font-size: 1.125rem;
-  color: var(--ifm-heading-color);
+  color: var(--wg-text);
+}
+
+.costValue {
+  font-weight: 600;
 }
 
 .savingsCard {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
-  box-shadow: 0 15px 50px rgba(102, 126, 234, 0.4);
-}
-
-.savingsCard h3 {
-  color: white;
-  font-size: 1.75rem;
-  margin-bottom: 2rem;
+  border: 1px solid rgba(72, 244, 163, 0.4);
 }
 
 .savingsHighlight {
   text-align: center;
-  padding: 2rem 0;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0;
 }
 
 .savingsAmount {
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin-bottom: 0.5rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  font-size: 2.4rem;
+  font-weight: 700;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .savingsLabel {
-  font-size: 1.125rem;
-  opacity: 0.95;
-  font-weight: 500;
+  color: var(--wg-text-muted);
 }
 
 .benefitsList {
   display: grid;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  gap: 0.8rem;
 }
 
 .benefitItem {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  backdrop-filter: blur(10px);
+  gap: 0.6rem;
+  color: var(--wg-text-muted);
 }
 
 .benefitIcon {
-  font-size: 1.5rem;
-}
-
-.benefitItem span:last-child {
-  flex: 1;
-  font-weight: 500;
+  font-size: 1.2rem;
 }
 
 .roiInfo {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-}
-
-.roiInfo p {
-  margin-bottom: 1rem;
+  margin-top: 1rem;
+  color: var(--wg-text-muted);
 }
 
 .roiExplanation {
-  font-size: 0.875rem;
-  opacity: 0.8;
-  line-height: 1.6;
+  margin-top: 0.5rem;
 }
 
-.ctaBox {
-  background: var(--ifm-color-primary-lightest);
+.nextSteps {
+  margin-top: 3.5rem;
   padding: 2rem;
-  border-radius: 0.75rem;
-  text-align: center;
+  border-radius: var(--wg-radius-lg);
+  background: rgba(10, 18, 32, 0.85);
+  border: 1px solid rgba(120, 180, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
 }
 
-.ctaBox h3 {
-  margin-bottom: 0.5rem;
+.nextSteps p {
+  color: var(--wg-text-muted);
 }
 
-.ctaBox p {
-  margin-bottom: 1.5rem;
-  color: var(--ifm-color-emphasis-700);
+.nextActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
-.ctaButton {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  font-size: 1.125rem;
-  font-weight: 600;
-  background: var(--ifm-color-primary);
-  color: white;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
+@media (max-width: 996px) {
+  .calculatorContainer {
+    grid-template-columns: 1fr;
+  }
 
-.ctaButton:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  color: white;
-  text-decoration: none;
+  .nextSteps {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

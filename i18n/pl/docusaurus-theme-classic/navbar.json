@@ -11,6 +11,10 @@
     "message": "Rozwiązanie",
     "description": "Navbar item with label Solution"
   },
+  "item.label.Offer": {
+    "message": "Oferta",
+    "description": "Navbar item with label Offer"
+  },
   "item.label.Cost Calculator": {
     "message": "Kalkulator kosztów",
     "description": "Navbar item with label Cost Calculator"

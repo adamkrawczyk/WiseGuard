@@ -1,0 +1,22 @@
+.aboutPage {
+  padding: 4rem 0 6rem;
+}
+
+.aboutCard {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  border-radius: var(--wg-radius-lg);
+  background: var(--wg-glass-strong);
+  border: 1px solid var(--wg-border);
+  box-shadow: var(--wg-shadow-md);
+}
+
+.aboutCard p,
+.aboutCard li {
+  color: var(--wg-text-muted);
+}
+
+.aboutCard ul {
+  padding-left: 1.2rem;
+}

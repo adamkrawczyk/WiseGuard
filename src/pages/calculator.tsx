@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 import Layout from '@theme/Layout';
+import Link from '@docusaurus/Link';
 import styles from './calculator.module.css';
 
 interface CalculationResult {
@@ -21,40 +22,31 @@ export default function Calculator(): JSX.Element {
   const [result, setResult] = useState<CalculationResult | null>(null);
 
   const calculateCosts = () => {
-    // Pricing model (in PLN)
-    const BLE_TAG_COST = 40;
-    const GPS_TRACKER_COST = 400;
-    const GATEWAY_COST = 400;
-    const MONTHLY_BLE_FEE = 2;
+    const BLE_TAG_COST = 60;
+    const GPS_TRACKER_COST = 500;
+    const GATEWAY_COST = 600;
+    const MONTHLY_BLE_FEE = 5;
     const MONTHLY_GPS_FEE = 20;
-    const MONTHLY_PLATFORM_FEE = 200;
+    const MONTHLY_PLATFORM_FEE = 8000;
 
-    // Gateway calculation based on site size
     let numGateways = 2;
     if (siteSize === 'medium') numGateways = 3;
     if (siteSize === 'large') numGateways = 5;
 
-    // Hardware costs
     const bleTagsCost = numTools * BLE_TAG_COST;
     const gpsTrackersCost = numHighValue * GPS_TRACKER_COST;
     const gatewaysCost = numGateways * GATEWAY_COST;
     const setupCost = bleTagsCost + gpsTrackersCost + gatewaysCost;
 
-    // Monthly costs
-    const monthlyCost = 
-      (numTools * MONTHLY_BLE_FEE) + 
-      (numHighValue * MONTHLY_GPS_FEE) + 
-      MONTHLY_PLATFORM_FEE;
+    const monthlyCost = numTools * MONTHLY_BLE_FEE + numHighValue * MONTHLY_GPS_FEE + MONTHLY_PLATFORM_FEE;
 
     const annualCost = monthlyCost * 12;
     const totalFirstYear = setupCost + annualCost;
 
-    // Potential savings calculation
-    const averageTheftLossPerYear = 15000 + (numTools * 50) + (numHighValue * 2000);
+    const averageTheftLossPerYear = 15000 + numTools * 50 + numHighValue * 2000;
     const preventionRate = 0.75;
     const potentialSavings = averageTheftLossPerYear * preventionRate;
 
-    // ROI calculation
     const netSavings = potentialSavings - totalFirstYear;
     const roiMonths = netSavings > 0 ? Math.ceil((totalFirstYear / potentialSavings) * 12) : 12;
 
@@ -73,30 +65,37 @@ export default function Calculator(): JSX.Element {
 
   return (
     <Layout
-      title="Kalkulator Kosztów"
-      description="Oblicz koszt i ROI wdrożenia WiseGuard na swojej budowie">
+      title="Kalkulator kosztów"
+      description="Oszacuj koszt wdrożenia WiseGuard i ROI dla placu budowy."
+    >
       <div className={styles.calculatorPage}>
         <div className="container">
-          <h1 className={styles.title}>Kalkulator Kosztów</h1>
-          <p className={styles.subtitle}>
-            Oszacuj swoją inwestycję i potencjalne oszczędności z WiseGuard
-          </p>
+          <header className={styles.header}>
+            <span className={styles.eyebrow}>WISEGUARD ROI</span>
+            <h1>Kalkulator kosztów i ROI</h1>
+            <p>
+              Skorzystaj z założeń whitepapera WiseGuard, aby oszacować sprzęt, subskrypcję i
+              potencjalne oszczędności.
+            </p>
+          </header>
 
           <div className={styles.calculatorContainer}>
             <div className={styles.inputSection}>
-              <h2>Szczegóły Twojej Budowy</h2>
+              <h2>Profil budowy</h2>
 
               <div className={styles.inputGroup}>
                 <label>
-                  Liczba Narzędzi i Małego Sprzętu
-                  <span className={styles.helpText}>(Używając Tagów BLE)</span>
+                  Liczba narzędzi i standardowych aktywów
+                  <span className={styles.helpText}>(tagi BLE)</span>
                 </label>
                 <input
                   type="number"
                   min="10"
                   max="10000"
                   value={numTools}
-                  onChange={(e) => setNumTools(Math.min(10000, Math.max(10, parseInt(e.target.value) || 10)))}
+                  onChange={(e) =>
+                    setNumTools(Math.min(10000, Math.max(10, parseInt(e.target.value) || 10)))
+                  }
                   className={styles.input}
                 />
                 <input
@@ -111,15 +110,17 @@ export default function Calculator(): JSX.Element {
 
               <div className={styles.inputGroup}>
                 <label>
-                  Liczba Aktywów Wysokiej Wartości
-                  <span className={styles.helpText}>(Używając Trackerów GPS)</span>
+                  Liczba aktywów wysokiej wartości
+                  <span className={styles.helpText}>(trackery GPS)</span>
                 </label>
                 <input
                   type="number"
                   min="0"
                   max="2000"
                   value={numHighValue}
-                  onChange={(e) => setNumHighValue(Math.min(2000, Math.max(0, parseInt(e.target.value) || 0)))}
+                  onChange={(e) =>
+                    setNumHighValue(Math.min(2000, Math.max(0, parseInt(e.target.value) || 0)))
+                  }
                   className={styles.input}
                 />
                 <input
@@ -133,29 +134,29 @@ export default function Calculator(): JSX.Element {
               </div>
 
               <div className={styles.inputGroup}>
-                <label>Rozmiar Budowy</label>
+                <label>Rozmiar budowy</label>
                 <select
                   value={siteSize}
                   onChange={(e) => setSiteSize(e.target.value)}
                   className={styles.select}
                 >
-                  <option value="small">Mała (do 100×100m) - 2 Bramy</option>
-                  <option value="medium">Średnia (100×200m) - 3 Bramy</option>
-                  <option value="large">Duża (200×200m+) - 5 Bram</option>
+                  <option value="small">Mała (≤100×100m) — 2 bramki</option>
+                  <option value="medium">Średnia (≤100×200m) — 3 bramki</option>
+                  <option value="large">Duża (200×200m+) — 5 bramek</option>
                 </select>
               </div>
 
               <button onClick={calculateCosts} className={styles.calculateButton}>
-                Oblicz Koszty
+                Oblicz koszty
               </button>
             </div>
 
             {result && (
               <div className={styles.resultsSection}>
                 <div className={styles.resultCard}>
-                  <h3>Twoja Inwestycja</h3>
+                  <h3>Twoja inwestycja</h3>
                   <div className={styles.costBreakdown}>
-                    <h4>Koszt Początkowy</h4>
+                    <h4>Koszty startowe</h4>
                     <div className={styles.costItem}>
                       <span>Tagi BLE ({numTools})</span>
                       <span className={styles.costValue}>{result.bleTagsCost.toLocaleString()} PLN</span>
@@ -165,71 +166,86 @@ export default function Calculator(): JSX.Element {
                       <span className={styles.costValue}>{result.gpsTrackersCost.toLocaleString()} PLN</span>
                     </div>
                     <div className={styles.costItem}>
-                      <span>Bramy</span>
+                      <span>Bramki</span>
                       <span className={styles.costValue}>{result.gatewaysCost.toLocaleString()} PLN</span>
                     </div>
                     <div className={styles.costItem + ' ' + styles.costTotal}>
-                      <span><strong>Suma Początkowa</strong></span>
+                      <span><strong>Suma startowa</strong></span>
                       <span className={styles.costValue}><strong>{result.setupCost.toLocaleString()} PLN</strong></span>
                     </div>
                   </div>
 
                   <div className={styles.costBreakdown}>
-                    <h4>Koszty Bieżące</h4>
+                    <h4>Koszty subskrypcji</h4>
                     <div className={styles.costItem}>
-                      <span>Subskrypcja Miesięczna</span>
+                      <span>Miesięcznie</span>
                       <span className={styles.costValue}>{result.monthlyCost.toLocaleString()} PLN</span>
                     </div>
                     <div className={styles.costItem}>
-                      <span>Subskrypcja Roczna</span>
+                      <span>Rocznie</span>
                       <span className={styles.costValue}>{result.annualCost.toLocaleString()} PLN</span>
                     </div>
                     <div className={styles.costItem + ' ' + styles.costTotal}>
-                      <span><strong>Pierwszy Rok Razem</strong></span>
+                      <span><strong>Pierwszy rok razem</strong></span>
                       <span className={styles.costValue}><strong>{result.totalFirstYear.toLocaleString()} PLN</strong></span>
                     </div>
                   </div>
                 </div>
 
                 <div className={styles.resultCard + ' ' + styles.savingsCard}>
-                  <h3>💰 Twoje Oczekiwane Korzyści</h3>
+                  <h3>Szacowany efekt</h3>
                   <div className={styles.savingsHighlight}>
-                    <div className={styles.savingsAmount}>
-                      {result.potentialSavings.toLocaleString()} PLN
-                    </div>
-                    <div className={styles.savingsLabel}>Szacowane Roczne Oszczędności</div>
+                    <div className={styles.savingsAmount}>{result.potentialSavings.toLocaleString()} PLN</div>
+                    <div className={styles.savingsLabel}>Szacowane oszczędności roczne</div>
                   </div>
                   <div className={styles.benefitsList}>
                     <div className={styles.benefitItem}>
                       <span className={styles.benefitIcon}>🛡️</span>
-                      <span>75% redukcja incydentów kradzieży</span>
+                      <span>Potencjalna redukcja kradzieży o 75%</span>
                     </div>
                     <div className={styles.benefitItem}>
                       <span className={styles.benefitIcon}>⏱️</span>
-                      <span>Oszczędź 3-4 tygodnie opóźnień projektu</span>
+                      <span>Uniknięcie 3–4 tygodni opóźnień</span>
                     </div>
                     <div className={styles.benefitItem}>
                       <span className={styles.benefitIcon}>📉</span>
-                      <span>Niższe składki ubezpieczeniowe</span>
+                      <span>Mniejsze ryzyko ubezpieczeniowe</span>
                     </div>
                     <div className={styles.benefitItem}>
-                      <span className={styles.benefitIcon}>👨‍💼</span>
-                      <span>Spokój ducha dla menedżerów</span>
+                      <span className={styles.benefitIcon}>👷</span>
+                      <span>Większy spokój kierowników</span>
                     </div>
                   </div>
                   <div className={styles.roiInfo}>
                     <p>
-                      <strong>Zwrot z Inwestycji:</strong> {result.roiMonths} miesięcy
+                      <strong>ROI:</strong> {result.roiMonths} miesięcy
                     </p>
                     <p className={styles.roiExplanation}>
-                      Na podstawie 74% polskich firm budowlanych doświadczających kradzieży rocznie,
-                      ze średnimi stratami w zależności od rozmiaru budowy. WiseGuard zapobiega do 75%
-                      potencjalnych strat poprzez monitorowanie w czasie rzeczywistym i natychmiastowe alerty.
+                      Na podstawie stawek kradzieży w polskim budownictwie i 75% skuteczności
+                      zapobiegania przy monitoringu w czasie rzeczywistym.
                     </p>
                   </div>
                 </div>
               </div>
             )}
+          </div>
+
+          <div className={styles.nextSteps}>
+            <div>
+              <h2>Przekuj liczby w decyzję</h2>
+              <p>
+                Wykorzystaj deck oferty oraz demo do przygotowania rekomendacji i uruchom pilotaż
+                WiseGuard.
+              </p>
+            </div>
+            <div className={styles.nextActions}>
+              <Link className="button button--primary" to="/offer">
+                Otwórz ofertę
+              </Link>
+              <Link className="button button--secondary" to="/contact">
+                Umów demo
+              </Link>
+            </div>
           </div>
         </div>
       </div>

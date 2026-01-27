@@ -1,0 +1,34 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#070b12" />
+      <stop offset="1" stop-color="#0f1a2b" />
+    </linearGradient>
+    <linearGradient id="glow" x1="120" y1="120" x2="420" y2="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2ce6ff" stop-opacity="0.8" />
+      <stop offset="1" stop-color="#9d7bff" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2ce6ff" />
+      <stop offset="0.6" stop-color="#9d7bff" />
+      <stop offset="1" stop-color="#48f4a3" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)" />
+  <rect x="0" y="0" width="1200" height="630" fill="url(#glow)" />
+  <g opacity="0.3" stroke="#2ce6ff">
+    <path d="M0 120h1200" />
+    <path d="M0 260h1200" />
+    <path d="M0 400h1200" />
+    <path d="M140 0v630" />
+    <path d="M320 0v630" />
+    <path d="M500 0v630" />
+  </g>
+  <g transform="translate(120 140)">
+    <path d="M70 0L10 28v44c0 54 36 86 60 92 24-6 60-38 60-92V28L70 0z" fill="url(#shield)" />
+    <path d="M38 52h64M38 80h64M38 108h64" stroke="white" stroke-width="4" stroke-linecap="round" />
+  </g>
+  <text x="360" y="240" fill="white" font-family="Space Grotesk, sans-serif" font-size="64" font-weight="600">WiseGuard 2050</text>
+  <text x="360" y="310" fill="#a4b4cc" font-family="IBM Plex Sans, sans-serif" font-size="30">Daily automated audit. Real-time alerts. Evidence-ready reports.</text>
+  <text x="360" y="380" fill="#2ce6ff" font-family="IBM Plex Sans, sans-serif" font-size="24">wiseguard.pl</text>
+</svg>

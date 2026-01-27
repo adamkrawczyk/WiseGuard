@@ -1,0 +1,189 @@
+.offerPage {
+  padding: 4rem 0 6rem;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: rgba(44, 230, 255, 0.85);
+}
+
+.header p {
+  color: var(--wg-text-muted);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.headerActions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.9rem;
+}
+
+.downloadLink {
+  color: var(--wg-accent);
+  text-decoration: none;
+  font-weight: 600;
+  align-self: center;
+}
+
+.deckWrapper {
+  padding: 2rem;
+  border-radius: var(--wg-radius-lg);
+  background: rgba(9, 16, 30, 0.9);
+  border: 1px solid rgba(120, 180, 255, 0.25);
+  box-shadow: var(--wg-shadow-lg);
+}
+
+.carouselHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.carouselHeader strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.carouselHeader span {
+  color: var(--wg-text-muted);
+  font-size: 0.9rem;
+}
+
+.carouselControls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.carouselButton {
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(120, 180, 255, 0.35);
+  background: rgba(8, 14, 26, 0.8);
+  color: var(--wg-text);
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.carouselButton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.carouselStatus {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(164, 180, 204, 0.85);
+}
+
+.carouselStatus strong {
+  font-size: 0.95rem;
+  color: var(--wg-text);
+}
+
+.carouselFrame {
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(7, 12, 22, 0.9);
+  border: 1px solid rgba(120, 180, 255, 0.25);
+  box-shadow: inset 0 0 30px rgba(2, 8, 18, 0.6);
+  height: min(72vh, 820px);
+}
+
+.carouselIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: #0b1324;
+  pointer-events: none;
+}
+
+.carouselFooter {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.carouselSlider {
+  width: 100%;
+}
+
+.carouselHint {
+  font-size: 0.85rem;
+  color: rgba(164, 180, 204, 0.8);
+}
+
+.procurementSection {
+  margin-top: 3.5rem;
+  padding: 2.2rem;
+  border-radius: var(--wg-radius-lg);
+  background: rgba(10, 18, 32, 0.85);
+  border: 1px solid rgba(120, 180, 255, 0.25);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.procurementSection p {
+  color: var(--wg-text-muted);
+}
+
+.procurementActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 996px) {
+  .procurementSection {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .deckWrapper {
+    padding: 1.2rem;
+  }
+
+  .carouselHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .carouselFrame {
+    height: min(65vh, 640px);
+  }
+}
+
+@media print {
+  .headerActions,
+  .procurementSection {
+    display: none;
+  }
+
+  .deckWrapper {
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 0;
+  }
+}

@@ -149,12 +149,12 @@ i18n/pl/docusaurus-plugin-content-pages/
 
 ### Pricing Model (PLN)
 ```
-BLE Tag: 40 PLN (hardware)
-GPS Tracker: 400 PLN (hardware)
-Gateway: 400 PLN (hardware)
-Monthly BLE Fee: 2 PLN per tag
+BLE Tag: 60 PLN (hardware)
+GPS Tracker: 500 PLN (hardware)
+Gateway: 600 PLN (hardware)
+Monthly BLE Fee: 5 PLN per tag
 Monthly GPS Fee: 20 PLN per tracker
-Platform Base Fee: 200 PLN per month
+Platform Base Fee: 8000 PLN per month
 ```
 
 ### Gateway Count by Site Size

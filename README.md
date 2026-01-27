@@ -81,10 +81,10 @@ Shield with circuit pattern representing:
 ## 💰 Calculator Pricing Model
 
 Current pricing (in PLN):
-- BLE Tag: 40 PLN (hardware) + 2 PLN/month
-- GPS Tracker: 400 PLN (hardware) + 20 PLN/month
-- Gateway: 400 PLN per unit
-- Platform Base Fee: 200 PLN/month
+- BLE Tag: 60 PLN (hardware) + 5 PLN/month
+- GPS Tracker: 500 PLN (hardware) + 20 PLN/month
+- Gateway: 600 PLN per unit
+- Platform Base Fee: 8000 PLN/month
 
 Gateway requirements:
 - Small sites (≤100m): 2 gateways
@@ -164,12 +164,12 @@ Edit values in:
 ### Updating Pricing
 Edit pricing constants in `src/pages/calculator.tsx`:
 ```typescript
-const BLE_TAG_COST = 40;
-const GPS_TRACKER_COST = 400;
-const GATEWAY_COST = 400;
-const MONTHLY_BLE_FEE = 2;
+const BLE_TAG_COST = 60;
+const GPS_TRACKER_COST = 500;
+const GATEWAY_COST = 600;
+const MONTHLY_BLE_FEE = 5;
 const MONTHLY_GPS_FEE = 20;
-const MONTHLY_PLATFORM_FEE = 200;
+const MONTHLY_PLATFORM_FEE = 8000;
 ```
 
 ### Adding Polish Translations

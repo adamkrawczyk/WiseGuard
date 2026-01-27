@@ -1,133 +1,75 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './contact.module.css';
 
 export default function Contact(): JSX.Element {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert('Dziękujemy za zainteresowanie! Wkrótce się z Tobą skontaktujemy.');
-    setFormData({ name: '', email: '', company: '', phone: '', message: '' });
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
-
   return (
     <Layout
       title="Kontakt"
-      description="Skontaktuj się z WiseGuard w celu uzyskania demo lub konsultacji">
+      description="Skontaktuj się z WiseGuard, aby umówić demo lub pilotaż."
+    >
       <div className={styles.contactPage}>
         <div className="container">
-          <h1 className={styles.title}>Skontaktuj się z nami</h1>
-          <p className={styles.subtitle}>
-            Zainteresowany ochroną swojej budowy? Skontaktuj się z nami w celu uzyskania demo lub konsultacji
-          </p>
+          <header className={styles.header}>
+            <span className={styles.eyebrow}>KONTAKT</span>
+            <h1>Umów demo WiseGuard</h1>
+            <p>
+              Planujesz 4-tygodniowy pilotaż lub prezentację dla zakupów? Skontaktuj się z nami,
+              odpowiemy w ciągu jednego dnia roboczego.
+            </p>
+          </header>
 
           <div className={styles.contactContainer}>
             <div className={styles.contactInfo}>
-              <h2>Napisz do nas</h2>
-              <p>Jesteśmy tutaj, aby odpowiedzieć na Twoje pytania i pomóc zabezpieczyć Twoją budowę.</p>
-              
+              <h2>Kontakt bezpośredni</h2>
+              <p>Jesteśmy tu, aby odpowiedzieć na pytania i zabezpieczyć Twoją budowę.</p>
+
               <div className={styles.infoCard}>
                 <h3>📧 Email</h3>
-                <p>info@wiseguard.pl</p>
+                <p>[email protected]</p>
               </div>
 
               <div className={styles.infoCard}>
                 <h3>📞 Telefon</h3>
-                <p>+48 XXX XXX XXX</p>
+                <p>+48 607 373 685</p>
               </div>
 
               <div className={styles.infoCard}>
                 <h3>🏢 Biuro</h3>
-                <p>Kraków, Polska</p>
+                <p>Józefa Piłsudskiego 23, 32-050 Skawina</p>
               </div>
 
               <div className={styles.infoCard}>
-                <h3>⏰ Godziny pracy</h3>
-                <p>Poniedziałek - Piątek: 9:00 - 17:00 CET</p>
+                <h3>🌐 WWW</h3>
+                <p>www.calbo.pl</p>
+              </div>
+
+              <div className={styles.infoCard}>
+                <h3>⏰ Godziny</h3>
+                <p>Pon–Pt: 9:00 – 17:00 CET</p>
               </div>
             </div>
 
-            <div className={styles.contactForm}>
-              <h2>Poproś o Demo</h2>
-              <form onSubmit={handleSubmit}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name">Imię i nazwisko *</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className={styles.input}
-                  />
+            <div className={styles.contactDetails}>
+              <h2>Dane rejestrowe</h2>
+              <div className={styles.detailList}>
+                <div>
+                  <span>Nazwa pełna</span>
+                  <strong>CALBO SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ</strong>
                 </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="email">Email *</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className={styles.input}
-                  />
+                <div>
+                  <span>KRS</span>
+                  <strong>0001081633</strong>
                 </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="company">Firma</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleChange}
-                    className={styles.input}
-                  />
+                <div>
+                  <span>NIP</span>
+                  <strong>9442286423</strong>
                 </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="phone">Telefon</label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className={styles.input}
-                  />
+                <div>
+                  <span>REGON</span>
+                  <strong>527463580</strong>
                 </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="message">Wiadomość *</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className={styles.textarea}
-                  />
-                </div>
-
-                <button type="submit" className={styles.submitButton}>
-                  Wyślij wiadomość
-                </button>
-              </form>
+              </div>
             </div>
           </div>
         </div>
