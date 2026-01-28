@@ -7,7 +7,42 @@ import type * as Preset from '@docusaurus/preset-classic';
 const config: Config = {
   title: 'WiseGuard',
   tagline: 'Inteligentny audyt zasobów i antykradzież na budowach',
-  favicon: 'img/favicon.svg',
+  favicon: 'img/favicon-32.png',
+  headTags: [
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '16x16',
+        href: '/img/favicon-16.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '32x32',
+        href: '/img/favicon-32.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/img/apple-touch-icon.png',
+      },
+    },
+    {
+      tagName: 'link',
+      attributes: {
+        rel: 'manifest',
+        href: '/site.webmanifest',
+      },
+    },
+  ],
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -59,7 +94,7 @@ const config: Config = {
       title: 'WiseGuard',
       logo: {
         alt: 'WiseGuard Logo',
-        src: 'img/logo.svg',
+        src: 'img/logo.png',
       },
       items: [
         {

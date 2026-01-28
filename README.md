@@ -184,9 +184,6 @@ Edit `src/css/custom.css` to change:
 - Dark mode colors
 - Font families
 
-### Logo
-Replace `static/img/logo.svg` with your custom logo.
-
 ## 🧪 Testing
 
 ### Pre-Deployment Checklist
